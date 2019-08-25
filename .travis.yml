@@ -10,18 +10,18 @@ script:
 
 
 after_success:
-  - docker build -t mynameisgan10/multi-client ./client
-  - docker build -t mynameisgan10/multi-nginx ./nginx
-  - docker build -t mynameisgan10/multi-server ./server
-  - docker build -t mynameisgan10/multi-worker ./worker
+  - docker build -t gandeveloper/multi-client ./client
+  - docker build -t gandeveloper/multi-nginx ./nginx
+  - docker build -t gandeveloper/multi-server ./server
+  - docker build -t gandeveloper/multi-worker ./worker
 
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   # Take those images and push them to docker hub
-  - docker push mynameisgan10/multi-client
-  - docker push mynameisgan10/multi-nginx
-  - docker push mynameisgan10/multi-server
-  - docker push mynameisgan10/multi-worker
+  - docker push gandeveloper/multi-client
+  - docker push gandeveloper/multi-nginx
+  - docker push gandeveloper/multi-server
+  - docker push gandeveloper/multi-worker
 
 
