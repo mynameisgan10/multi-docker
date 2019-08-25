@@ -9,6 +9,8 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./nginx
+    depends_on:
+      - client
     ports:
       - "3050:80"
   api:
